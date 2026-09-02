@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# After your first deploy, add your live URL here, e.g.
+# Sitemap: https://yourusername.github.io/lea-river-fc/sitemap.xml
