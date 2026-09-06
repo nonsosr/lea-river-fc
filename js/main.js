@@ -1,70 +1,63 @@
-/* Lea River FC — site scripts
-   Minimal, no dependencies. Everything here is progressive enhancement:
-   the site is fully usable with JavaScript disabled. */
+/* Lea River FC
+   Two small jobs: the menu on narrow screens, and the countdown on the
+   home page. Both are progressive enhancement — everything on the site
+   is readable with JavaScript switched off. */
 
 (function () {
   "use strict";
 
-  /* ---------- Mobile navigation ---------- */
-  var toggle = document.querySelector(".nav-toggle");
-  var nav = document.querySelector(".site-nav");
+  /* --- Menu --- */
+  var btn = document.querySelector(".nav-btn");
+  var nav = document.querySelector(".nav");
 
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
+  if (btn && nav) {
+    btn.addEventListener("click", function () {
       var open = nav.getAttribute("data-open") === "true";
       nav.setAttribute("data-open", String(!open));
-      toggle.setAttribute("aria-expanded", String(!open));
+      btn.setAttribute("aria-expanded", String(!open));
     });
 
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && nav.getAttribute("data-open") === "true") {
         nav.setAttribute("data-open", "false");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.focus();
+        btn.setAttribute("aria-expanded", "false");
+        btn.focus();
       }
     });
 
     document.addEventListener("click", function (e) {
-      if (
-        nav.getAttribute("data-open") === "true" &&
-        !nav.contains(e.target) &&
-        !toggle.contains(e.target)
-      ) {
+      if (nav.getAttribute("data-open") === "true" &&
+          !nav.contains(e.target) && !btn.contains(e.target)) {
         nav.setAttribute("data-open", "false");
-        toggle.setAttribute("aria-expanded", "false");
+        btn.setAttribute("aria-expanded", "false");
       }
     });
   }
 
-  /* ---------- Countdown to next match ----------
-     Kick-off is read from the <time> element already in the markup, so there
-     is only one place to update it. The panel stays hidden unless the maths
-     works out, and the date is visible in the text above either way. */
-  var box = document.getElementById("countdown");
-  var stamp = document.querySelector(".hero__details time[datetime]");
+  /* --- Countdown ---
+     Reads kick-off from the <time> already in the markup, so there is only
+     one date to change when the fixture rolls over. Stays hidden if the
+     date has passed or cannot be parsed. */
+  var box = document.getElementById("count");
+  var stamp = document.querySelector(".field__when time[datetime]");
   if (!box || !stamp) return;
 
   var kickoff = new Date(stamp.getAttribute("datetime"));
   if (isNaN(kickoff.getTime())) return;
 
-  var dEl = document.getElementById("cd-d");
-  var hEl = document.getElementById("cd-h");
-  var mEl = document.getElementById("cd-m");
+  var d = document.getElementById("c-d");
+  var h = document.getElementById("c-h");
+  var m = document.getElementById("c-m");
 
-  function pad(n) {
-    return n < 10 ? "0" + n : String(n);
-  }
+  function pad(n) { return n < 10 ? "0" + n : String(n); }
 
   function tick() {
     var diff = kickoff - new Date();
-    if (diff <= 0) {
-      box.hidden = true;
-      return;
-    }
+    if (diff <= 0) { box.hidden = true; return; }
     var mins = Math.floor(diff / 60000);
-    dEl.textContent = Math.floor(mins / 1440);
-    hEl.textContent = pad(Math.floor(mins / 60) % 24);
-    mEl.textContent = pad(mins % 60);
+    d.textContent = Math.floor(mins / 1440);
+    h.textContent = pad(Math.floor(mins / 60) % 24);
+    m.textContent = pad(mins % 60);
     box.hidden = false;
   }
 

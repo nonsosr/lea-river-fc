@@ -6,7 +6,7 @@
   <title>Contact — Lea River FC</title>
   <meta name="description" content="Get in touch with Lea River FC about playing, sponsorship or anything else.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#14141E">
+  <meta name="theme-color" content="#FE6C7F">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lea River FC">
@@ -18,139 +18,102 @@
 
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+  <a href="#main" class="skip">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container site-header__inner">
-      <a href="index.html" class="site-logo" aria-label="Lea River FC home">
-        <img src="images/badge-nav.png" alt="" class="site-logo__badge" width="36" height="36">
-        <span class="site-logo__text">Lea River <span>FC</span></span>
+  <header class="masthead">
+    <div class="wrap masthead__inner">
+      <a href="index.html" class="wordmark">
+        <img src="images/badge-nav.png" alt="" width="32" height="32">
+        <span>Lea River FC</span>
       </a>
-
-      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <button class="nav-btn" aria-controls="nav" aria-expanded="false" aria-label="Open menu">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
-
-      <nav id="main-nav" class="site-nav" data-open="false" aria-label="Main">
-        <ul class="site-nav__list">
-          <li><a href="index.html" class="site-nav__link">Home</a></li>
-          <li><a href="news.html" class="site-nav__link">News</a></li>
-          <li><a href="fixtures.html" class="site-nav__link">Fixtures</a></li>
-          <li><a href="club.html" class="site-nav__link">The Club</a></li>
-          <li><a href="contact.html" class="site-nav__link" aria-current="page">Contact</a></li>
+      <nav id="nav" class="nav" data-open="false" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="fixtures.html">Fixtures</a></li>
+          <li><a href="club.html">The club</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <div class="page-header">
-      <div class="container"><h1>Contact</h1></div>
+    <div class="pagehead">
+      <div class="wrap"><h1>Contact</h1></div>
     </div>
 
     <section class="section">
-      <div class="container contact-layout">
+      <div class="wrap split">
 
-        <div>
-          <h2 class="section__heading">Get in touch</h2>
-          <p style="margin-bottom:var(--sp-xl);max-width:36rem;color:var(--grigio);">
-            The quickest way to reach us is a direct message on Instagram or TikTok &mdash;
-            we read those daily. Whether you want to play, sponsor a shirt, or just ask
-            when the next home game is, get in touch.
-          </p>
+        <div class="prose">
+          <div class="head"><h2>Get in touch</h2></div>
+          <p>The quickest way to reach us is a direct message on Instagram or TikTok. We read those daily. Whether you want to play, sponsor a shirt, or just ask when the next home game is, say hello.</p>
+          <p><a class="btn" href="https://www.instagram.com/leariverfc/">Message us on Instagram</a></p>
 
-          <div class="info-card" style="margin-bottom:var(--sp-lg);">
-            <div class="info-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></div>
-            <h3 class="info-card__title">Instagram</h3>
-            <p class="info-card__text"><a href="https://www.instagram.com/leariverfc/">@leariverfc</a> &mdash; match-day photos, results and squad news.</p>
-          </div>
-
-          <div class="info-card" style="margin-bottom:var(--sp-lg);">
-            <div class="info-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.5.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></div>
-            <h3 class="info-card__title">TikTok</h3>
-            <p class="info-card__text"><a href="https://www.tiktok.com/@leariverfc2026">@leariverfc2026</a> &mdash; clips and highlights.</p>
-          </div>
-
-          <div class="info-card">
-            <div class="info-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
-            <h3 class="info-card__title">Email</h3>
-            <p class="info-card__text">A club email address is being set up. <span class="placeholder-label">Email TBC</span></p>
-          </div>
+          <ul class="facts" style="margin-top: var(--s7);">
+            <li><b>Instagram</b><span><a href="https://www.instagram.com/leariverfc/">@leariverfc</a> — results, squad news and match-day photos.</span></li>
+            <li><b>TikTok</b><span><a href="https://www.tiktok.com/@leariverfc2026">@leariverfc2026</a> — clips and highlights.</span></li>
+            <li><b>Email</b><span>Being set up. <span class="tbc">To confirm</span></span></li>
+          </ul>
         </div>
 
         <aside>
-          <h2 class="section__heading">Where we play</h2>
-
-          <div class="info-card" style="margin-bottom:var(--sp-lg);">
-            <div class="info-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
-            <h3 class="info-card__title">Hackney Marshes</h3>
-            <p class="info-card__text">
-              Hackney Marshes, London E9.<br>
-              Nearest stations: Hackney Wick, Homerton.<br>
-              <span class="placeholder-label">Pitch number TBC</span>
-            </p>
-          </div>
-
-          <div class="info-card">
-            <div class="info-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-            <h3 class="info-card__title">Match days</h3>
-            <p class="info-card__text">Sundays, 10:30 kick-off. Ten league fixtures between September and December &mdash; see the <a href="fixtures.html">fixtures page</a>.</p>
-          </div>
+          <div class="head"><h2>Match days</h2></div>
+          <ul class="facts">
+            <li><b>Hackney Marshes</b><span>London E9. Nearest stations Hackney Wick and Homerton. <span class="tbc">Pitch number to confirm</span></span></li>
+            <li><b>Sundays, 10.30</b><span>Every fixture this season kicks off at 10.30. Arrive for 10.00 to catch the warm-up.</span></li>
+            <li><b>Next at home</b><span>Élever Eleven, Sunday 27 September. See the <a href="fixtures.html">full list</a>.</span></li>
+          </ul>
         </aside>
 
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-
-        <div class="footer-col">
-          <p class="footer-col__heading">Lea River FC</p>
-          <p>Sunday league football in east London. Founded 2026.</p>
-          <p>Hackney &amp; Leyton Sunday Football League, Division 3</p>
-          <p>Home matches at Hackney Marshes</p>
-
-          <ul class="social-links" aria-label="Social media">
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <h2>Lea River FC</h2>
+          <p>Sunday league football on Hackney Marshes. Founded 2026.</p>
+          <p>Hackney &amp; Leyton Sunday Football League, Division 3.</p>
+          <ul class="social">
             <li><a href="https://www.instagram.com/leariverfc/" aria-label="Lea River FC on Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C16.67.014 16.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></li>
             <li><a href="https://www.tiktok.com/@leariverfc2026" aria-label="Lea River FC on TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></li>
           </ul>
         </div>
-
-        <div class="footer-col">
-          <p class="footer-col__heading">Quick Links</p>
-          <ul class="footer-links">
+        <div>
+          <h2>Pages</h2>
+          <ul>
             <li><a href="news.html">News</a></li>
             <li><a href="fixtures.html">Fixtures</a></li>
-            <li><a href="club.html">The Club</a></li>
+            <li><a href="club.html">The club</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-
-        <div class="footer-col">
-          <p class="footer-col__heading">Follow</p>
-          <ul class="footer-links">
+        <div>
+          <h2>Follow</h2>
+          <ul>
             <li><a href="https://www.instagram.com/leariverfc/">Instagram</a></li>
             <li><a href="https://www.tiktok.com/@leariverfc2026">TikTok</a></li>
-            <li><span class="placeholder-label">Email TBC</span></li>
           </ul>
         </div>
-
       </div>
-
-      <div class="footer-bottom">
+      <div class="foot__base">
         <span>&copy; 2026 Lea River FC</span>
-        <span>Hackney &amp; Leyton Sunday Football League, Division 3</span>
+        <span>Hackney Marshes, London E9</span>
       </div>
     </div>
   </footer>

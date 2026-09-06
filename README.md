@@ -1,154 +1,115 @@
-# Lea River FC — Official Website
+# Lea River FC
 
-Static website for Lea River FC, a Sunday league club playing in the
-Hackney & Leyton Sunday Football League, Division 3.
+Static site for Lea River FC — Sunday league, Hackney & Leyton Division 3,
+home games at Hackney Marshes.
 
-Plain HTML, CSS and ~70 lines of JavaScript. No build step, no framework,
-no dependencies. Deploys to GitHub Pages on every push to `main`.
+Plain HTML, one stylesheet, ~70 lines of JavaScript. No build step, no
+framework, no dependencies. Deploys to GitHub Pages on push to `main`.
 
-## Club details baked into the site
+Live at https://leariverfc.co.uk
 
-| | |
-|---|---|
-| League | Hackney & Leyton Sunday Football League, Division 3 |
-| Founded | 2026 |
-| Home venue | Hackney Marshes, London E9 |
-| Kick-off | Sundays, 10:30 |
-| Instagram | https://www.instagram.com/leariverfc/ |
-| TikTok | https://www.tiktok.com/@leariverfc2026 |
-
-## Running it locally
-
-No build step. Open `index.html` in a browser, or serve the folder:
+## Running locally
 
 ```bash
 python3 -m http.server 8000
-# then visit http://localhost:8000
 ```
 
-## Deploying to GitHub Pages
+## The design
 
-1. Push this repository to GitHub.
-2. Go to **Settings → Pages → Build and deployment → Source** and pick
-   **GitHub Actions**.
-3. Push to `main`. The workflow in `.github/workflows/deploy.yml` publishes
-   the site.
+**Pink is the field, not the trim.** The badge pink is used as a large
+surface with black type on it, rather than as an accent on a dark page.
+Black on `#FE6C7F` measures 7.7:1, so this is also the more legible
+arrangement — white on pink only manages 2.7:1 and is never used.
 
-Your URL will be `https://<your-username>.github.io/<repo-name>/`.
+| Token | Value | Where |
+|---|---|---|
+| `--pink` | `#FE6C7F` | Hero, page headers. Black type only |
+| `--pink-wash` | `#FFE9ED` | Alternating section bands |
+| `--pink-deep` | `#C9304A` | Links on white (5.2:1) |
+| `--black` | `#000000` | Type, masthead, footer, rules |
+| `--grey` | `#5A5A64` | Secondary text (6.8:1) |
 
-**The repository must be public** on a free GitHub account — Pages only
-builds from private repositories on Pro or higher. This is a public-facing
-club site, so there is nothing here that needs hiding.
+**Type is Archivo**, one family across its width axis. Headings run wide
+and heavy (`wdth 112, wght 800`) like a shirt number; body text sits at
+normal width. Set via `font-variation-settings`, so if you add a heading
+use an existing class rather than a bare `font-weight`.
 
-### After the first deploy
+**Deliberately absent:** border-radius (zero declarations), drop shadows,
+gradients, all-caps eyebrow labels, and hover animations on cards. The one
+piece of motion is the hero settling on load, and it is disabled under
+`prefers-reduced-motion`.
 
-Two files have a placeholder URL that should be replaced with the real one:
+## Updating after a match
 
-- `sitemap.xml` — replace `REPLACE-WITH-YOUR-PAGES-URL` (5 occurrences)
-- `robots.txt` — uncomment the `Sitemap:` line and fill in the URL
+**Home page hero** — `index.html`, the `.field` block. Change the opponent
+in `.field__who`, the `.field__where` line, and the `<time datetime>`. The
+countdown reads that datetime, so it is the only date to edit. There is a
+comment in the file saying the same thing.
 
-Optionally add `<link rel="canonical">` and an absolute `og:image` URL to
-each page's `<head>` once the domain is settled.
+**Last result band** — the `.band` block just below. Three lines: label,
+score, note.
 
-## Editing content
-
-Everything is hand-editable HTML in the root folder.
-
-| File | Page |
-|---|---|
-| `index.html` | Home — next match, news, upcoming fixtures |
-| `fixtures.html` | Full fixture list and results |
-| `news.html` | News listing |
-| `club.html` | About the club |
-| `contact.html` | Contact and directions |
-
-### Updating the next match (home page)
-
-In `index.html`, edit the `.hero` block: the two team names, the crest, and
-the `<time datetime="...">` value. The countdown reads its target straight
-from that `datetime` attribute, so there is only one date to change.
-
-### Adding a result
-
-In `fixtures.html`, change a fixture's `<li>` from the upcoming form to a
-result by swapping the middle span:
+**Fixtures page** — `fixtures.html`. Fixtures are a real `<table>`. To turn
+a fixture into a result, swap the score cell:
 
 ```html
-<!-- upcoming -->
-<span class="fixture-item__score fixture-item__score--upcoming" aria-hidden="true">v</span>
+<!-- not played -->
+<td class="fx-c-score"><span class="score score--tbc">v</span></td>
 
 <!-- played -->
-<span class="fixture-item__score" aria-label="2 – 1">2 – 1</span>
+<td class="fx-c-score"><span class="score score--w" aria-label="Won 3 to 1">3–1</span></td>
 ```
 
-Then add a result class to the `<li>`: `fixture-item--win`,
-`fixture-item--draw`, or `fixture-item--loss`. These colour the score
-green, gold, or black. Keep the `aria-label` in sync with the score so
-screen readers announce it correctly.
+`--w` win (pink fill), `--d` draw (white fill), `--l` loss (black fill).
+Fill differs as well as colour, so the result is legible without colour
+vision. Keep the `aria-label` accurate — it is what a screen reader reads.
 
-Delete the "No results yet" `.empty-state` block once real results exist.
+Move `class="is-next"` to whichever row is the next game.
 
-### Adding a news article
+## Files
 
-Copy an existing `<article class="news-card">` block in `news.html` and
-change the date, heading, and text. To feature it on the home page, copy it
-into the `.news-grid` in `index.html` too.
+```
+index.html  fixtures.html  news.html  club.html  contact.html
+css/style.css      all styles and tokens
+js/main.js         menu + countdown
+images/            web-sized assets only
+brand/             full-res badge masters, NOT served
+.github/workflows/deploy.yml
+```
 
-## Images
-
-`images/` holds only web-sized assets. `brand/` holds the full-resolution
-badge masters and is **not served** — keep it that way so phones do not
-download a 500 KB PNG.
-
-Before adding match photos, resize them to roughly the width they display
-at (around 800px for a news card) and keep each under ~200 KB.
-
-Every meaningful image needs descriptive `alt` text. Decorative images take
-`alt=""`.
-
-## Design tokens
-
-Colours, type, and spacing are CSS custom properties at the top of
-`css/style.css`. Change them there rather than hunting through rules.
-
-The palette comes from the badge:
-
-| Token | Value | Use |
-|---|---|---|
-| `--rosa` | `#FE6C7F` | Badge pink. Accents on dark backgrounds, surfaces. **Never** white text on it (2.7:1) |
-| `--rosa-deep` | `#C9304A` | Links and buttons on light backgrounds (5.1:1, passes AA) |
-| `--nero` | `#14141E` | Headers, footers, hero |
-| `--oro` | `#B8934A` | "TBC" placeholder badges |
-
-Fonts are Barlow Condensed (headings) and Source Sans 3 (body), from
-Google Fonts.
+`brand/` stays out of the served site — those files are ~500 KB each.
+When adding match photos, resize to roughly display width and keep under
+~200 KB. Meaningful images need `alt` text; decorative ones take `alt=""`.
 
 ## Still to confirm
 
-Search the HTML for `placeholder-label` to find these. They render as gold
-TBC badges so they are obvious on the page.
+Marked on the page with a bordered "to confirm" tag. Search for `class="tbc"`.
 
-- Club email address (6 places)
-- Hackney Marshes pitch number (3 places)
-- Squad and committee names (1 place)
+- Club email address
+- Hackney Marshes pitch number
+- Squad and committee names
 
-Before publishing any player names or photographs, get their permission.
-Do not publish phone numbers, home addresses, or dates of birth. If any
-player is under 18, get written parental consent first.
+Before publishing player names or photos, get their permission. No phone
+numbers, home addresses or dates of birth. Under-18s need written parental
+consent.
+
+## There is no contact form
+
+The old form posted nowhere, which is worse than not having one. The
+contact page points at Instagram and TikTok instead. If you want a real
+form later, Formspree or Netlify Forms will do it without a backend —
+add a privacy note if you do.
 
 ## Accessibility
 
-Built to WCAG 2.2 AA. Verified: semantic landmarks, logical heading order,
-skip link, keyboard-operable nav with a 3px visible focus ring, contrast
-ratios checked against the palette, `prefers-reduced-motion` respected, no
-horizontal overflow at 320px, and full content available with JavaScript
-disabled.
+WCAG 2.2 AA. Checked: semantic landmarks and real table markup, heading
+order, skip link, keyboard nav with a visible focus ring, contrast on
+every colour pair, no horizontal overflow at 320px, full content without
+JavaScript, and reduced-motion respected.
 
-Please re-check contrast if you change `--rosa` or `--rosa-deep`.
+Re-check contrast if you change any colour token.
 
 ## Privacy
 
-No analytics, no cookies, no trackers, no third-party embeds, and no
-contact form posting to an external service. The only third-party request
-is Google Fonts. If you want analytics later, pick something
-cookie-free and add a privacy notice.
+No analytics, cookies, trackers or embeds. Google Fonts is the only
+third-party request.
