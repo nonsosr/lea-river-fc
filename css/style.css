@@ -1073,3 +1073,15 @@ h3 { font-size: var(--fs-lg); }
 .fixture-item__away > .fixture-item__ha {
   white-space: nowrap;
 }
+
+/* Opponent crest images in the hero (e.g. pre-season friendlies) */
+.hero__crest--away img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+.hero__crest--away:has(img) {
+  background: transparent;
+  border-color: transparent;
+}

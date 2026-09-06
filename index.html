@@ -59,25 +59,36 @@
         <h1 class="sr-only">Lea River FC — official website</h1>
         <p class="hero__eyebrow" id="next-match-heading">Next match</p>
 
+        <!-- AFTER TODAY'S FRIENDLY: swap this block back to the league opener.
+             Away crest -> <div class="hero__crest hero__crest--away" aria-hidden="true">CO</div>
+             Name        -> Clapton Orient
+             Order       -> away team first, Lea River second
+             Time        -> <time datetime="2026-09-20T10:30">Sunday 20 September, 10:30</time>
+             Meta        -> League · Away
+             The countdown reads its target from the datetime below, so that is
+             the only date to change. -->
+
         <div class="hero__matchup">
-          <div class="hero__team">
-            <div class="hero__crest hero__crest--away" aria-hidden="true">CO</div>
-            <span class="hero__team-name">Clapton Orient</span>
-          </div>
-
-          <span class="hero__vs" aria-label="versus">v</span>
-
           <div class="hero__team">
             <div class="hero__crest hero__crest--home">
               <img src="images/badge-onwhite.png" alt="" width="88" height="88">
             </div>
             <span class="hero__team-name">Lea River</span>
           </div>
+
+          <span class="hero__vs" aria-label="versus">v</span>
+
+          <div class="hero__team">
+            <div class="hero__crest hero__crest--away">
+              <img src="images/absolute-fc.png" alt="" width="88" height="88">
+            </div>
+            <span class="hero__team-name">Absolute FC</span>
+          </div>
         </div>
 
         <p class="hero__details">
-          <time datetime="2026-09-20T10:30">Sunday 20 September, 10:30</time><br>
-          League · Away
+          <time datetime="2026-09-06T11:00">Sunday 6 September, 11:00</time><br>
+          Pre-season friendly · Hackney Marshes
         </p>
 
         <div class="hero__countdown" id="countdown" hidden>
@@ -138,6 +149,13 @@
 
           <ul class="fixture-list">
             <li class="fixture-item fixture-item--next">
+              <span class="fixture-item__date"><time datetime="2026-09-06">Sun 6 Sep</time> · 11:00</span>
+              <span class="fixture-item__home">Lea River <span class="fixture-item__ha fixture-item__ha--h" title="Home">H</span></span>
+              <span class="fixture-item__score fixture-item__score--upcoming" aria-hidden="true">v</span>
+              <span class="fixture-item__away">Absolute FC</span>
+              <span class="fixture-item__meta">Friendly · Hackney Marshes</span>
+            </li>
+            <li class="fixture-item">
               <span class="fixture-item__date"><time datetime="2026-09-20">Sun 20 Sep</time> · 10:30</span>
               <span class="fixture-item__home">Clapton Orient</span>
               <span class="fixture-item__score fixture-item__score--upcoming" aria-hidden="true">v</span>
