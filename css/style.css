@@ -370,6 +370,17 @@ a:hover { color: var(--black); }
   font-variation-settings: "wdth" 100, "wght" 500;
 }
 
+.score--pp {
+  border-style: dashed;
+  border-color: var(--grey);
+  color: var(--grey);
+  font-variation-settings: "wdth" 100, "wght" 600;
+}
+
+/* Postponed fixtures recede: still listed, clearly not played */
+.fixtures tr.is-pp .fx-date,
+.fixtures tr.is-pp .fx-opp { color: var(--grey); }
+
 /* The next fixture gets a pink edge, not a tinted row */
 .fixtures tr.is-next td { box-shadow: inset 4px 0 0 var(--pink); }
 .fixtures tr.is-next .fx-date { color: var(--pink-deep); }
