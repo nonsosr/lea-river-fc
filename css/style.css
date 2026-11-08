@@ -381,6 +381,17 @@ a:hover { color: var(--black); }
 .fixtures tr.is-pp .fx-date,
 .fixtures tr.is-pp .fx-opp { color: var(--grey); }
 
+/* Result not yet confirmed: honest gap, never a guessed score */
+.score--tba {
+  border-style: dashed;
+  border-color: var(--grey);
+  color: var(--grey);
+  font-variation-settings: "wdth" 100, "wght" 600;
+}
+
+.fixtures tr.is-tba .fx-date,
+.fixtures tr.is-tba .fx-opp { color: var(--grey); }
+
 /* The next fixture gets a pink edge, not a tinted row */
 .fixtures tr.is-next td { box-shadow: inset 4px 0 0 var(--pink); }
 .fixtures tr.is-next .fx-date { color: var(--pink-deep); }
