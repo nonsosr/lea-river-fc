@@ -307,6 +307,9 @@ a:hover { color: var(--black); }
   color: var(--black);
   text-decoration-thickness: 2px;
   white-space: nowrap;
+  /* padding carries the hit area to the 24px WCAG 2.2 minimum without
+     changing how the link sits on the heading's baseline */
+  padding-block: var(--s1);
 }
 
 /* --- Fixture table --------------------------------------------------- */
@@ -470,8 +473,16 @@ a:hover { color: var(--black); }
 .story { border-top: 3px solid var(--black); padding-top: var(--s4); }
 
 .story time { display: block; font-size: var(--t-sm); color: var(--grey); margin-bottom: var(--s2); }
-.story h3 { margin-bottom: var(--s3); }
+.story h2,
+.story h3 {
+  font-size: var(--t-md);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--s3);
+}
+.story h2 a,
 .story h3 a { color: var(--black); text-decoration: none; }
+.story h2 a:hover,
 .story h3 a:hover { color: var(--pink-deep); text-decoration: underline; }
 .story p { color: var(--grey); font-size: var(--t-sm); max-width: 42ch; }
 
@@ -590,8 +601,14 @@ a.sponsor__name:hover { color: var(--pink-deep); }
 .foot h2 { font-size: var(--t-base); color: var(--pink); margin-bottom: var(--s3); }
 .foot p { font-size: var(--t-sm); margin-bottom: var(--s2); }
 .foot ul { list-style: none; }
-.foot li + li { margin-top: var(--s2); }
-.foot a { color: #B9B9C0; text-decoration: none; font-size: var(--t-sm); }
+.foot li + li { margin-top: var(--s1); }
+.foot a {
+  display: inline-block;
+  color: #B9B9C0;
+  text-decoration: none;
+  font-size: var(--t-sm);
+  padding-block: var(--s1);
+}
 .foot a:hover { color: var(--pink); }
 
 .social { display: flex; gap: var(--s3); margin-top: var(--s4); }
