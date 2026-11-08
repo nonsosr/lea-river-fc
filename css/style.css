@@ -300,6 +300,7 @@ a:hover { color: var(--black); }
 
 /* Heading with a rule running to the edge of the column */
 .head { display: flex; align-items: baseline; gap: var(--s4); margin-bottom: var(--s6); }
+.head--spaced { margin-top: var(--s8); }
 .head::after { content: ""; flex: 1; height: 3px; background: var(--black); }
 .head a {
   font-size: var(--t-sm);
@@ -505,6 +506,7 @@ a:hover { color: var(--black); }
 /* --- Facts list ------------------------------------------------------ */
 
 .facts { list-style: none; border-top: 3px solid var(--black); }
+.facts--spaced { margin-top: var(--s7); }
 .facts li {
   padding: var(--s4) 0;
   border-bottom: 1px solid var(--rule);
