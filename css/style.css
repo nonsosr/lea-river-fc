@@ -552,6 +552,34 @@ a:hover { color: var(--black); }
 }
 .btn:hover { background: var(--pink); color: var(--black); }
 
+/* --- Sponsor ---------------------------------------------------------
+   Upgrade to the supplied logo when one arrives; the wordmark stands in
+   so the slot is real rather than promised. */
+
+.sponsor {
+  border-top: 3px solid var(--black);
+  padding-block: var(--s5);
+}
+.sponsor__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s2) var(--s5);
+}
+.sponsor__label {
+  font-size: var(--t-sm);
+  font-variation-settings: "wdth" 100, "wght" 600;
+  color: var(--grey);
+}
+.sponsor__name {
+  font-size: var(--t-lg);
+  font-variation-settings: "wdth" 112, "wght" 800;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  text-decoration: none;
+}
+a.sponsor__name:hover { color: var(--pink-deep); }
+
 /* --- Footer ---------------------------------------------------------- */
 
 .foot { background: var(--black); color: #B9B9C0; padding-block: var(--s7) var(--s5); }
