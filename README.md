@@ -62,9 +62,33 @@ a fixture into a result, swap the score cell:
 
 `--w` win (pink fill), `--d` draw (white fill), `--l` loss (black fill).
 Fill differs as well as colour, so the result is legible without colour
-vision. Keep the `aria-label` accurate — it is what a screen reader reads.
+vision. Keep the `aria-label` accurate, it is what a screen reader reads.
+
+Two further states exist for games that have no score:
+
+```html
+<!-- postponed, no new date yet -->
+<span class="score score--pp" aria-label="Postponed">P</span>
+
+<!-- played, but we do not have the result -->
+<span class="score score--tba" aria-label="Result to be confirmed">?</span>
+```
+
+Put `is-pp` or `is-tba` on the `<tr>` as well, which mutes the row. Never
+fill in a score you are not sure of; `--tba` exists so the gap is visible
+and honest.
 
 Move `class="is-next"` to whichever row is the next game.
+
+**Cup ties** do not belong in the league table. Add them to the Results
+table on the right, where the date cell carries a competition label
+(`League`, `Friendly`, `Dickie Davies Cup`). A fixture with no date yet
+goes under the `Date to be confirmed` divider at the foot of the league
+table.
+
+**When a fixture moves**, check the season figures above the table and the
+home/away split on the homepage. A venue swap changes how many games fall
+at the Marshes, which is easy to miss.
 
 ## Files
 
