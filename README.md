@@ -110,8 +110,11 @@ When adding match photos, resize to roughly display width and keep under
 Marked on the page with a bordered "to confirm" tag. Search for `class="tbc"`.
 
 - Club email address
-- Hackney Marshes pitch number
 - Squad and committee names
+
+The Hackney Marshes pitch number is deliberately **not** on the site. It is
+reallocated every matchday, so any number published here would be wrong by
+the following Sunday. The contact page points people at Instagram instead.
 
 Before publishing player names or photos, get their permission. No phone
 numbers, home addresses or dates of birth. Under-18s need written parental
