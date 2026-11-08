@@ -337,6 +337,11 @@ a:hover { color: var(--black); }
 
 .fx-opp { font-variation-settings: "wdth" 105, "wght" 700; font-size: var(--t-base); }
 
+/* Results carry a competition label that can be long ("Dickie Davies
+   Cup"). Stacking it under the date keeps the opponent column wide
+   enough that club names stay on one line. */
+.fixtures--results .fx-time { display: block; }
+
 .fx-venue { font-size: var(--t-sm); color: var(--grey); }
 
 /* Home / away: a letter in a box, so colour never carries meaning alone */
